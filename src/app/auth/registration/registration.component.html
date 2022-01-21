@@ -1,1 +1,17 @@
-<p>registration works!</p>
+<form [formGroup] = "registrationForm" (ngSubmit)="onSubmit()">
+    <label for="email">Email</label>
+    <input type="text" id="email" formControlName="email">
+
+    <label for="login">Login</label>
+    <input type="text" id="login" formControlName="login">
+
+    <label for="name">Wyświetlana nazwa</label>
+    <input type="text" id="name" formControlName="name">
+
+    <label for="password">Hasło</label>
+    <input type="password" id="password" formControlName="password">
+    <div *ngIf="submitted && f['password'].errors" class="invalid-data">
+        Błąd
+    </div>
+    <button type="submit">Zarejestruj</button>
+</form>
